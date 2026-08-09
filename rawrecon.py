@@ -23,7 +23,8 @@ def requete_https(cible, chemin="/"):
         if not recu: # Si il n'y a plus aucun message
             break
         byts += recu
-    print(f"Message reçu de {cible}")
+        print("Message trop long -> rechargement de la demande")
+    print(f"Message reçu de {cible} \r")
     
 
     parties = byts.decode()
