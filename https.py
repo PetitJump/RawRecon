@@ -18,7 +18,7 @@ def requete_https(cible, chemin="/"):
     ### Envoie de la requette ###
     requete = f"GET {chemin} HTTP/1.1\r\nHost: {cible}\r\nConnection: close\r\n\r\n" # Requete HTTP
     data = requete.encode() # Encode la requete en byts
-    securise.sendall(data)
+    securise.sendall(data) # Envoie
     print(f"Message envoyé chez {cible}")
     ######
 
