@@ -1,6 +1,5 @@
 import socket
 import ssl
-from dns import dns, extraire_ip
 
 def requete_https(cible, chemin="/"):
 
