@@ -1,7 +1,6 @@
 import socket
 import ssl
-import struct
-from dns import encoder_nom
+from dns import dns, extraire_ip
 
 def requete_https(cible, chemin="/"):
 
@@ -15,11 +14,6 @@ def requete_https(cible, chemin="/"):
     context = ssl.create_default_context() # Crée l'objet qui va servir a chiffré
     securise = context.wrap_socket(emetteur, server_hostname=cible) # Sécurise ce que va envoyer l'emetteur
     print("Connexion sécurisé activé")
-    ######
-
-    ### Création et envoie de la requete DNS ###
-    message = encoder_nom("sumply.fr") + struct.pack(">HH", 1, 1)
-    securise.sendto(message, ("8.8.8.8", 53))
     ######
 
     ### Envoie de la requette ###
